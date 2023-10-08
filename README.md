@@ -7,7 +7,7 @@ See [the documentation](https://docs.cypress.io/guides/component-testing/third-p
 Requires Cypress 12.7+ (coming late Feb 2023). In your Marko.js project:
 
 ```
-npm install cypress @vallme2003/cypress-ct-solid-js 
+npm install cypress @vallme2003/cypress-ct-marko-js 
 ```
 
 Open Cypress and click "Component Testing" and it should set everything up for you.

@@ -1,5 +1,5 @@
 import { getContainerEl, setupHooks } from "@cypress/mount-utils";
-import { render } from "solid-js/web";
+import { render } from "@marko/testing-library";
 
 let dispose: () => void;
 
