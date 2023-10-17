@@ -7,7 +7,7 @@
     "lib": ["ES6"],
     "esModuleInterop": true,
     "strict": true,
-    "types": ["cypress"],
+    "types": ["cypress","@types/node"],
     "skipLibCheck": true
   },
   "include": ["definition.ts"]

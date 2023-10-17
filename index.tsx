@@ -1,10 +1,10 @@
 import { getContainerEl, setupHooks } from "@cypress/mount-utils";
-import { render } from "solid-js/web";
+const marko = require("marko"); // Use 'require' to import the module without type checking
 
-let dispose: () => void;
+let component: any;
 
 function cleanup() {
-  dispose?.();
+  component.destroy();
 }
 
 interface MountingOptions {
@@ -12,14 +12,16 @@ interface MountingOptions {
 }
 
 export function mount(
-  component: Parameters<typeof render>[0],
+  componentPath: string,
+  input: object,
   options: MountingOptions = {}
 ) {
-  // rendering/mounting function.
   const root = getContainerEl();
 
-  // Render component with your library's relevant
-  dispose = render(component, root);
+  marko.load(componentPath).then((template: any) => {
+    component = template.renderSync(input);
+    component.appendTo(root);
+  });
 
   return cy.wait(0, { log: false }).then(() => {
     if (options.log !== false) {

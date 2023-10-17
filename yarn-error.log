@@ -1,0 +1,66 @@
+Arguments: 
+  /Users/vthenappan/.nvm/versions/node/v18.18.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js
+
+PATH: 
+  /Users/vthenappan/.nvm/versions/node/v18.18.0/bin:/Users/vthenappan/Downloads/instantclient_19_8:/Users/vthenappan/Downloads/maven-3.3.9/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/CyberArk EPM.app/Contents/Helpers:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/vthenappan/anaconda3/bin:/Users/vthenappan/anaconda3/condabin:/Users/vthenappan/Downloads/instantclient_19_8:/Users/vthenappan/Downloads/maven-3.3.9/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/vthenappan/Downloads/jdk/zulu-8.jdk/Contents/Home/bin:/Users/vthenappan/Downloads/jdk/zulu-8.jdk/Contents/Home/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.18.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://cdn.cypress.io/beta/npm/12.6.0/darwin-arm64/feature/ct-public-api-a6a71e1798cedc85992704ca9a5dd6c1322b414b/cypress.tgz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:696:66)
+      at new ResponseError (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:802:124)
+      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66215:16)
+      at Request.emit (node:events:517:28)
+      at module.exports.Request.onRequestResponse (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141767:10)
+      at ClientRequest.emit (node:events:517:28)
+      at HTTPParser.parserOnIncomingClient (node:_http_client:700:27)
+      at HTTPParser.parserOnHeadersComplete (node:_http_common:119:17)
+      at TLSSocket.socketOnData (node:_http_client:541:22)
+      at TLSSocket.emit (node:events:517:28)
+
+npm manifest: 
+  {
+    "name": "@vallme2003/cypress-ct-marko-js",
+    "version": "0.0.0",
+    "description": "Framework Definition for Marko.js with Cypress Component Testing",
+    "exports": {
+      "node": "./definition.js",
+      "default": "./index.js"
+    },
+    "scripts": {
+      "build": "npm run build:definition && npm run build:mount",
+      "build:mount": "tsc --project tsconfig.mount.json",
+      "build:definition": "tsc --project tsconfig.definition.json"
+    },
+    "types": "*.d.ts",
+    "files": [
+      "package.json",
+      "definition.js",
+      "index.js",
+      "definition.d.ts",
+      "index.d.ts"
+    ],
+    "devDependencies": {
+      "cypress": "https://cdn.cypress.io/beta/npm/12.6.0/darwin-arm64/feature/ct-public-api-a6a71e1798cedc85992704ca9a5dd6c1322b414b/cypress.tgz",
+      "marko": "^5.31.11",
+      "@marko/webpack": "^9.3.3",
+      "typescript": "^4.9.5"
+    },
+    "dependencies": {
+      "@cypress/mount-utils": "^4.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

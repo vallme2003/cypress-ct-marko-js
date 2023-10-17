@@ -1,21 +1,21 @@
 import { defineComponentFramework } from "cypress";
 
 const solidDep: Cypress.CypressComponentDependency = {
-  type: "solid-js",
-  name: "Solid",
-  package: "solid-js",
-  installer: "solid-js",
+  type: "marko",
+  name: "Marko",
+  package: "marko",
+  installer: "marko",
   description:
     "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
   minVersion: "^1.6.11",
 };
 
-const solidVitePlugin: Cypress.CypressComponentDependency = {
-  type: "solid-js-vite-plugin",
-  name: "Vite Plugin Solid",
-  package: "vite-plugin-solid",
-  installer: "vite-plugin-solid",
-  description: "A simple integration to run solid-js with vite",
+const markoWebpackPlugin: Cypress.CypressComponentDependency = {
+  type: "marko-webpack",
+  name: "Marko Webpack Plugin",
+  package: "@marko/webpack",
+  installer: "@marko/webpack",
+  description: "A simple integration to run marko-js with webpack",
   minVersion: "^1.6.0 || ^2.0.0",
 };
 
@@ -23,18 +23,18 @@ const solidVitePlugin: Cypress.CypressComponentDependency = {
  * The definition.
  */
 export default defineComponentFramework({
-  type: "@lmiller1990/cypress-ct-solid-js",
+  type: "@vallme2003/cypress-ct-marko-js",
 
-  name: "Solid.js",
+  name: "Marko.js",
 
-  supportedBundlers: ["vite"],
+  supportedBundlers: ["webpack"],
 
   detectors: [solidDep],
 
   dependencies: (bundler) => {
     const deps = [solidDep];
-    if (bundler === "vite") {
-      return deps.concat(solidVitePlugin);
+    if (bundler === "webpack") {
+      return deps.concat(markoWebpackPlugin);
     }
     return deps;
   },
